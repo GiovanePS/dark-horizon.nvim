@@ -1,7 +1,6 @@
 local M = {}
 
 function M.setup()
-
 	local colors = {
 		bg = "#0E0E0E",
 		fg = "#D5D8DA",
@@ -10,7 +9,6 @@ function M.setup()
 		gray = "#7D7D7D",
 		red = "#F92672",
 		red_pure = "#FF0000",
-		pink = "#FF4797",
 		violet = "#B795E6",
 		purple = "#A42AEB",
 		green = "#29D398",
@@ -39,6 +37,12 @@ function M.setup()
 		Warning = { fg = colors.yellow_pure, bold = true },
 		Info = { fg = colors.blue, bold = true },
 		Hint = { fg = colors.cyan, italic = true },
+		Ok = { fg = colors.green_pure, bold = true },
+		DiagnosticError = { fg = colors.red_pure, bold = true },
+		DiagnosticWarn = { fg = colors.yellow_pure, bold = true },
+		DiagnosticInfo = { fg = colors.blue, bold = true },
+		DiagnosticHint = { fg = colors.cyan, italic = true },
+		DiagnosticOk = { fg = colors.green_pure, bold = true },
 		Cursor = { bg = colors.fg },
 		CurSearch = { fg = colors.bg, bg = colors.yellow, bold = true },
 
@@ -60,6 +64,9 @@ function M.setup()
 		DiffAdd = { fg = colors.green_pure, bg = colors.bg },
 		DiffChange = { fg = colors.yellow_pure, bg = colors.bg },
 		DiffDelete = { fg = colors.red_pure, bg = colors.bg },
+		Added = { fg = colors.green_pure, bg = colors.bg },
+		Changed = { fg = colors.yellow_pure, bg = colors.bg },
+		Removed = { fg = colors.red_pure, bg = colors.bg },
 
 		-- Treesitter
 		["@variable"] = { fg = colors.red },
@@ -81,6 +88,12 @@ function M.setup()
 		["@constant.builtin"] = { fg = colors.red },
 		["@module"] = { fg = colors.red, bold = true },
 		["@property"] = { fg = colors.yellow },
+		["@attribute"] = { fg = colors.cyan },
+		["@attribute.builtin"] = { fg = colors.cyan },
+		-- ["@tag"] = { fg = colors.cyan },
+		-- ["@tag.builtin"] = { fg = colors.cyan },
+		["@tag.attribute"] = { fg = colors.purple, italic = true },
+		-- ["@tag.delimiter"] = { fg = colors.cyan },
 
 		-- Rainbow Delimiters
 		RainbowDelimiterRed = { fg = colors.red },
@@ -95,7 +108,6 @@ function M.setup()
 	for group, opts in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, opts)
 	end
-
 end
 
 return M
