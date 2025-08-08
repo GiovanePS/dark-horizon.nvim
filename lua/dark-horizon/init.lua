@@ -3,10 +3,9 @@ local M = {}
 function M.setup()
 	local colors = {
 		bg = "#0E0E0E",
-		fg = "#D5D8DA",
 		white = "#FFFFFF",
 		black = "#010101",
-		gray = "#7D7D7D",
+		gray = "#282828",
 		red = "#F92672",
 		red_pure = "#FF0000",
 		violet = "#B795E6",
@@ -23,15 +22,15 @@ function M.setup()
 
 	local highlights = {
 		-- Default
-		Normal = { fg = colors.fg, bg = colors.bg },
-		NormalFloat = { fg = colors.fg, bg = colors.bg },
-		Pmenu = { fg = colors.fg, bg = colors.bg },
+		Normal = { fg = colors.white, bg = colors.bg },
+		NormalFloat = { fg = colors.white, bg = colors.bg },
+		Pmenu = { fg = colors.white, bg = colors.bg },
 		PmenuSel = { fg = colors.bg, bg = colors.blue },
 		Type = { fg = colors.blue },
 		Typedef = { fg = colors.blue, italic = true },
-		LineNr = { fg = colors.fg, bg = colors.bg },
-		CursorLine = { bg = colors.black },
-		StatusLine = { fg = colors.fg, bg = colors.bg, bold = true },
+		LineNr = { fg = colors.white, bg = colors.bg },
+		CursorLine = { bg = colors.gray },
+		StatusLine = { fg = colors.white, bg = colors.bg, bold = true },
 		Visual = { bg = "#4F4A40" },
 		Error = { fg = colors.red_pure, bold = true },
 		Warning = { fg = colors.yellow_pure, bold = true },
@@ -43,7 +42,7 @@ function M.setup()
 		DiagnosticInfo = { fg = colors.blue, bold = true },
 		DiagnosticHint = { fg = colors.cyan, italic = true },
 		DiagnosticOk = { fg = colors.green_pure, bold = true },
-		Cursor = { bg = colors.fg },
+		Cursor = { bg = colors.white },
 		CurSearch = { fg = colors.bg, bg = colors.yellow, bold = true },
 
 		-- Syntax
@@ -70,7 +69,9 @@ function M.setup()
 
 		-- Treesitter
 		["@variable"] = { fg = colors.red },
+		["@variable.builtin"] = { fg = colors.red, italic = true },
 		["@variable.parameter"] = { fg = colors.yellow },
+		["@variable.parameter.builtin"] = { fg = colors.red, italic = true },
 		["@variable.member"] = { fg = colors.yellow },
 		["@function"] = { fg = colors.yellow, bold = true },
 		["@function.builtin"] = { fg = colors.yellow, bold = true },
