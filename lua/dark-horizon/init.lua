@@ -2,9 +2,9 @@ local M = {}
 
 function M.setup()
 	local colors = {
-		bg = "#0E0E0E",
+		bg = "#010101",
 		white = "#FFFFFF",
-		black = "#010101",
+		black = "#0E0E0E",
 		gray = "#282828",
 		red = "#F92672",
 		red_pure = "#FF0000",
@@ -13,6 +13,7 @@ function M.setup()
 		green = "#29D398",
 		green_pure = "#00FF00",
 		blue = "#26BBD9",
+		dark_blue = "#007bff",
 		yellow = "#FDB849",
 		yellow_pure = "#FFFF00",
 		orange = "#FAB795",
@@ -44,6 +45,7 @@ function M.setup()
 		DiagnosticOk = { fg = colors.green_pure, bold = true },
 		Cursor = { bg = colors.white },
 		CurSearch = { fg = colors.bg, bg = colors.yellow, bold = true },
+		Special = { fg = colors.purple },
 
 		-- Syntax
 		Comment = { fg = colors.comment, italic = true },
@@ -51,7 +53,7 @@ function M.setup()
 		Keyword = { fg = colors.blue, bold = true },
 		String = { fg = colors.green },
 		Number = { fg = colors.violet },
-		Boolean = { fg = colors.green },
+		Boolean = { fg = colors.dark_blue },
 		Function = { fg = colors.yellow, bold = true },
 		Operator = { fg = colors.blue },
 		Statement = { fg = colors.green, bold = true },
@@ -60,12 +62,14 @@ function M.setup()
 		Directory = { fg = colors.blue, bold = true },
 		ErrorMsg = { fg = colors.red_pure, bold = true },
 		WarningMsg = { fg = colors.yellow_pure, bold = true },
-		DiffAdd = { fg = colors.green_pure, bg = colors.bg },
-		DiffChange = { fg = colors.yellow_pure, bg = colors.bg },
-		DiffDelete = { fg = colors.red_pure, bg = colors.bg },
-		Added = { fg = colors.green_pure, bg = colors.bg },
-		Changed = { fg = colors.yellow_pure, bg = colors.bg },
-		Removed = { fg = colors.red_pure, bg = colors.bg },
+		-- This changes for markdown files too
+			DiffAdd = { bg = colors.red },
+			DiffChange = { bg = colors.dark_blue },
+			DiffDelete = { bg = colors.green },
+
+		Added = { fg = colors.green_pure },
+		Changed = { fg = colors.yellow_pure },
+		Removed = { fg = colors.red_pure },
 
 		-- Treesitter
 		["@variable"] = { fg = colors.red },
@@ -104,6 +108,15 @@ function M.setup()
 		RainbowDelimiterGreen = { fg = colors.green },
 		RainbowDelimiterViolet = { fg = colors.violet },
 		RainbowDelimiterCyan = { fg = colors.cyan },
+
+		-- Render Markdown
+		RenderMarkdownCode = { bg = colors.black },
+		-- RenderMarkdownH1Bg = { bg = colors.gray },
+		-- RenderMarkdownH2Bg = { bg = colors.gray },
+		-- RenderMarkdownH3Bg = { bg = colors.gray },
+		-- RenderMarkdownH4Bg = { bg = colors.gray },
+		-- RenderMarkdownH5Bg = { bg = colors.gray },
+		-- RenderMarkdownH6Bg = { bg = colors.gray },
 	}
 
 	for group, opts in pairs(highlights) do
