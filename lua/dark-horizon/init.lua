@@ -45,7 +45,7 @@ function M.setup()
 		DiagnosticOk = { fg = colors.green_pure, bold = true },
 		Cursor = { bg = colors.white },
 		CurSearch = { fg = colors.bg, bg = colors.yellow, bold = true },
-		Special = { fg = colors.purple },
+		Special = { fg = colors.cyan },
 
 		-- Syntax
 		Comment = { fg = colors.comment, italic = true },
@@ -63,9 +63,9 @@ function M.setup()
 		ErrorMsg = { fg = colors.red_pure, bold = true },
 		WarningMsg = { fg = colors.yellow_pure, bold = true },
 		-- This changes for markdown files too
-			DiffAdd = { bg = colors.red },
-			DiffChange = { bg = colors.dark_blue },
-			DiffDelete = { bg = colors.green },
+		DiffAdd = { bg = colors.red },
+		DiffChange = { bg = colors.dark_blue },
+		DiffDelete = { bg = colors.green },
 
 		Added = { fg = colors.green_pure },
 		Changed = { fg = colors.yellow_pure },
